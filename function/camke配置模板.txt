@@ -1,0 +1,21 @@
+cmake动态库的构建：
+1.设置最小版本:
+camke_minimum_required(VERSION 3.28)
+2.设置项目名称:
+project(名称)
+3.指定项目编译器版本，即选用c++17版本编译器：
+set(CMAKE_CXX_STANDARD 17)
+4.设置查找动态库的安装路径：
+set(OPENCV_DIR, "c://clion/opencv")
+5.设置查找动态库的include目录(就相当于将上面的目录与下面目录拼接成完整目录):
+include_directories("${OPENCV_DIR}/include")
+6.设置查找动态库的lib目录：
+link_directories("${OPENCV_DIR}/lib")
+7.通过上面的路径开始查找库（如果不知道左边这个库OpenCV的名字可到相应的opencv的congfig.cmake的注释去查看名字):
+find_package(OpenCV REQUIRED)
+8.设置源文件(也就是想要执行的文件)，若要同时构建几个cpp文件可以先set(SOURCE  main.cpp text.cpp)然后再add_executable(项目名 ${SOURCE})：
+add_executable(项目名称 main.cpp)
+9.链接库文件(如opencv的库文件，同样不知道名字，可到自己下载的cv库里面去寻找自己的opencvconfig.cmake文件注释里面找相应变量的名称):
+target_include_directories(项目名 ${OpenCV_LIBS})
+
+

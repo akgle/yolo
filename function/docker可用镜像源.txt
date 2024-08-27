@@ -1,0 +1,38 @@
+https://ccr.ccs.tencentyun.com
+"https://docker.m.daocloud.io",
+"https://docker.rainbond.cc"
+测试镜像源是否有效：docker pull ccr.ccs.tencentyun.com/library/nginx:latest
+镜像源：
+      "https://ba0b63tn.mirror.aliyuncs.com",   
+      "https://docker.anyhub.us.kg",
+      "https://docker.awsl9527.cn",
+      "https://docker.registry.cyou",
+      "https://docker-cf.registry.cyou",
+      "https://dockercf.jsdelivr.fyi",
+      "https://docker.jsdelivr.fyi",
+      "https://dockertest.jsdelivr.fyi",
+      "https://mirror.aliyuncs.com",
+      "https://dockerproxy.com",
+      "https://mirror.baidubce.com",
+      "https://docker.m.daocloud.io",
+      "https://docker.nju.edu.cn",
+      "https://docker.mirrors.sjtug.sjtu.edu.cn",
+      "https://docker.mirrors.ustc.edu.cn",
+      "https://mirror.iscas.ac.cn",
+      "https://docker.rainbond.cc"
+       "https://hub.uuuadc.top", 
+        "https://docker.anyhub.us.kg", 
+        "https://dockerhub.jobcher.com",  
+        "https://docker.ckyl.me", 
+        "https://docker.awsl9527.cn"
+
+{
+  "registry-mirrors": [
+    "https://mirror.ccs.tencentyun.com",
+    "https://docker.m.daocloud.io",
+    "https://docker.rainbond.cc"
+  ]
+}
+
+mirrors.aliyun.com/ubuntu/
+拉取的镜像源是dockerhub里面的，而还有软件的镜像源需要更换

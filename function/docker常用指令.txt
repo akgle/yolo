@@ -1,0 +1,57 @@
+进入linux（ubuntu）子系统：
+wsl
+查看所有已安装的 WSL (Windows Subsystem for Linux) 发行版，包括它们的版本信息：
+wsl --list -v
+查看容器信息：
+docker info
+更换镜像源：
+sudo nano /etc/docker/daemon.json
+daemon配置：
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "registry-mirrors": [
+    "https://ccr.ccs.tencentyun.com",
+    "https://docker.m.daocloud.io",
+    "https://docker.rainbond.cc"
+  ]
+}
+查看当前所有的镜像信息：
+docker images
+容器的停止：
+docker stop <container_id_or_name>
+容器的删除：
+docker rm <container_id_or_name>
+镜像的删除：
+docker rmi hello-world:latest
+版本信息：
+wsl -l -v
+设置默认系统：
+wsl --set-default Ubuntu-24.04
+版本升级wsl到wsl2：
+wsl --set-version Ubuntu-24.04 2
+版本降级wsl2到wsl：
+wsl --set-version Ubuntu-24.04 1
+使用指令进入里面 
+sudo nano /etc/wsl.conf
+添加下面：
+[network]
+generateResolvConf = false添加导致wsl1的网络也失效
+
+wsl与wsl2最大区别就是，wsl2可以与docker桌面版配合，wsl不行，但wsl不需要配置网络，而wsl2需要配置
+当是wsl时登录的网络信息：
+IPv4 address for wifi0: 192.168.74.93: wifi0 接口的 IPv4 地址为 192.168.74.93。
+IPv6 address for wifi0: 2409:8962:3ab:d11:2cc9:3954:bec4:961d: wifi0 接口的一个 IPv6 地址。
+IPv6 address for wifi0: 2409:8962:3ab:d11:4d14:ca87:8293:af21: wifi0 接口的另一个 IPv6 地址。
+
+wsl1的/etc/resolv.conf由于是动态的所以是空的
+wsl1的/etc/wsl.conf 默认是：
+[boot]
+systemd=true
+
+
